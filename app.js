@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import userRoute from "../CRUD/crontroller/user_controller/user_controller.js";
+import userRoute from "./routes/userRoute/userroute.js";
 
 
 const app = express();

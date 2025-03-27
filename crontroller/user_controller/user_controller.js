@@ -1,7 +1,9 @@
-import express from "express";
-import { getUser } from "../../model/user.db/user_db.js";
+import {db} from '../../model/db.js';
 
-const router = express.Router();
-router.get("/", getUser);
-
-export default router;
+export const getUser = (_, res) => {
+  const q = "SELECT * FROM user";
+  db.query(q, (err, data) => {
+    if (err) return res.json(err);
+    return res.status(200).json(data);
+  });
+}
